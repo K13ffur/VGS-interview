@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VGS TEST</title>
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script type="text/javascript" src="https://js.verygoodvault.com/vgs-collect/2.2.2-poc-fraud.1/vgs-collect.js"></script>
+	
+  <style>
+    body {
+      padding: 10px;
+    }
+
+    span[id*="cc-"] {
+      display: block;
+      height: 40px;
+      margin-bottom: 15px;
+    }
+
+    span[id*="cc-"] iframe {
+      height: 100%;
+      width: 100%;
+    }
+
+    pre {
+      font-size: 14px;
+    }
+
+    .form-field {
+      display: block;
+      width: 100%;
+      height: calc(2.25rem + 2px);
+      padding: .375rem .75rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #131415;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 3px solid #7C7E80;
+      border-radius: .25rem;
+      transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+
+    .form-field iframe {
+      border: 0 none transparent;
+      height: 100%;
+      vertical-align: middle;
+      width: 100%;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+<main>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+      <div class="row card card-outline-secondary">
+        <div class="card-body">
+          <h3 class="text-center">Credit Card Payment Test</h3>
+          <hr>
+          <form id="cc-form">
+            <div class="form-group">
+              <label for="cc-name">Name</label>
+              <span id="cc-name" class="form-field">
+                <iframe title="Secure text input frame" src="https://js.verygoodvault.com/vgs-collect/2.0.31/lib/index.html?env=bGl2ZQ%3D%3D&amp;fieldId=randomId300567667970856832&amp;formId=randomId3008827850828975721&amp;name=card_holder&amp;placeholder=Card%20holder&amp;prefillValue=&amp;tnt=&amp;type=text&amp;validations=required&amp;vgsCollectSessionId=4de928ca-dc08-45a3-87c3-02426b83777e" frameborder="0" scrolling="0" allowtransparency="true" id="randomId300567667970856832"></iframe>
+              </span>
+            </div>
+            <div class="form-group">
+              <label for="cc-number">Card number</label>
+              <span id="cc-number" class="form-field">
+                <iframe title="Secure card number input frame" src="https://js.verygoodvault.com/vgs-collect/2.0.31/lib/index.html?env=bGl2ZQ%3D%3D&amp;errorColor=%23D8000C&amp;fieldId=randomId3005372159449221361&amp;formId=randomId3008827850828975721&amp;name=card_number&amp;placeholder=Card%20number&amp;prefillValue=&amp;successColor=%234F8A10&amp;tnt=&amp;type=card-number&amp;validations=required&amp;validations=validCardNumber&amp;vgsCollectSessionId=4de928ca-dc08-45a3-87c3-02426b83777e" frameborder="0" scrolling="0" allowtransparency="true" id="randomId3005372159449221361"></iframe>
+              </span>
+            </div>
+            <div class="form-group">
+              <label for="cc-cvc">CVC</label>
+              <span id="cc-cvc" class="form-field">
+              <iframe title="Secure card security code input frame" src="https://js.verygoodvault.com/vgs-collect/2.0.31/lib/index.html?env=bGl2ZQ%3D%3D&amp;errorColor=%23D8000C&amp;fieldId=randomId3007899622707312814&amp;formId=randomId3008827850828975721&amp;maxLength=3&amp;name=card_cvc&amp;placeholder=CVC&amp;prefillValue=&amp;successColor=%234F8A10&amp;tnt=&amp;type=card-security-code&amp;validations=required&amp;validations=validCardSecurityCode&amp;vgsCollectSessionId=4de928ca-dc08-45a3-87c3-02426b83777e" frameborder="0" scrolling="0" allowtransparency="true" id="randomId3007899622707312814" name="vgs-collect-cvv-field"></iframe>
+              </span>
+            </div>
+            <div class="form-group">
+              <label for="cc-expiration-date">Expiration date</label>
+              <span id="cc-expiration-date" class="form-field">
+              <iframe title="Secure card expiration date input frame" src="https://js.verygoodvault.com/vgs-collect/2.0.31/lib/index.html?env=bGl2ZQ%3D%3D&amp;errorColor=%23D8000C&amp;fieldId=randomId3002955728806965088&amp;formId=randomId3008827850828975721&amp;name=card_exp&amp;placeholder=MM%20%2F%20YY&amp;prefillValue=&amp;successColor=%234F8A10&amp;tnt=&amp;type=card-expiration-date&amp;validations=required&amp;validations=validCardExpirationDate&amp;vgsCollectSessionId=4de928ca-dc08-45a3-87c3-02426b83777e" frameborder="0" scrolling="0" allowtransparency="true" id="randomId3002955728806965088"></iframe>
+              </span>
+            </div>
+            <button type="submit" class="ant-btn ant-btn-primary" ant-click-animating-without-extra-node="false" onclick="window.open('completed.html')"><span>Submit</span></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<script>
+  // VGS Collect form initialization
+  const form = VGSCollect.create('tntenvjkfhy', function(state) {});
+
+  // Create VGS Collect field for credit card name
+  form.field('#cc-name', {
+    type: 'text',
+    name: 'card_name',
+    placeholder: 'Joe Business',
+    validations: ['required'],
+  });
+
+  // Create VGS Collect field for credit card number
+  form.field('#cc-number', {
+    type: 'card-number',
+    name: 'card_number',
+    successColor: '#11148C',
+    errorColor: '#FF000F',
+    placeholder: '4111 1111 1111 1111',
+    validations: ['required', 'validCardNumber'],
+  });
+
+  // Create VGS Collect field for CVC
+  form.field('#cc-cvc', {
+    type: 'card-security-code',
+    name: 'card_cvc',
+    placeholder: '123',
+    validations: ['required', 'validCardSecurityCode'],
+  });
+
+  // Create VGS Collect field for credit card expiration date
+  form.field('#cc-expiration-date', {
+    type: 'card-expiration-date',
+    name: 'card_expirationDate',
+    placeholder: '12 / 2023',
+    validations: ['required', 'validCardExpirationDate']
+  });
+
+  // Submits all of the form fields by executing a POST request.
+  document.getElementById('cc-form')
+    .addEventListener('submit', function(e) {
+      e.preventDefault();
+      form.submit('/post', {
+      }, function(status, data) {
+        document.getElementById('result').innerHTML = JSON.stringify(data.json, null, 4);
+      });
+    }, function (errors) {
+      document.getElementById('result').innerHTML = errors;
+    });
+</script>
+</body>
+</html>
