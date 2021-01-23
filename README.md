@@ -16,3 +16,6 @@ Files contained in my testing:
 vgs-test2.html - test form to enter credit card info
 completed.html - Page result from submit button
 Outbound_test.java - Java code for outbound testing. This is something that I could not get to work properly
+
+
+editing Trial Fork for updates and pull request
